@@ -8,27 +8,13 @@ import { CreateAccountComponent } from './create-account/create-account.componen
 import {RouterModule,Routes} from '@angular/router';
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-const appRoutes: Routes = [
-	{path : 'browse-seed' , component : SeedListComponent },
-	
-
-	{path : 'sign-up' , component : CreateAccountComponent  },
-
-	{ path: '',   redirectTo: '/sign-up', pathMatch: 'full' },
-	{ path: '**', component: PageNotFoundComponent },
-];	
 
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(
-    	appRoutes,
-	{enableTracing: true} // debugging purpose only
-	)
-  ],
-  
-
+    	FormsModule,
+	],
  
 
 
@@ -40,7 +26,6 @@ const appRoutes: Routes = [
 ],
 
 
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
